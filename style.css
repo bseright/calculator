@@ -1,0 +1,192 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    background-color: rgb(58, 70, 99);
+    font-family: 'Rubik', sans-serif;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.calcContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.calcHeader {
+    display: flex;
+    height: 60px;
+    color: white;
+    padding-left: 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: .9em;
+    width: 250px;
+}
+
+.themeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 120px;
+}
+
+.themeTitle {
+    font-size: .6em;
+}
+
+.themeSelect {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.themeLabels {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2px;
+    gap: 10px;
+    font-size: .5em;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 16px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(35, 44, 66);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 1px;
+    background-color: rgb(215, 215, 215);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(39px);
+    -ms-transform: translateX(39px);
+    transform: translateX(39px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+.calcAlert {
+    height: 100px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: rgb(35, 44, 66);
+}
+
+.calcBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 325px;
+    border-radius: 10px;
+    background-color: rgb(35, 44, 66);
+    padding: 15px;
+}
+
+button {
+    background-color: rgb(215, 215, 215);
+    border: none;
+    width: 87px;
+    height: 55px;
+    border-radius: 5px;
+    font-size: .9em;
+}
+
+.operator {
+    background-color: rgb(156, 190, 179);
+    font-size: 1.2em;
+}
+
+.delete, .reset {
+    background-color: rgb(215, 140, 140);
+}
+
+.reset, .equal {
+    width: 182px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: auto;  
+    color: white; 
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
