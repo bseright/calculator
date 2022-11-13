@@ -40,7 +40,7 @@ buttons.forEach(button => {
         // assign value to operand
         // if operand is undefined continue editing current
 
-        if (this.id === "add" || this.id === "subtract" || this.id === "decimal" || this.id === "divide" || this.id === "multiply") {
+        if (this.id === "add" || this.id === "subtract" || this.id === "divide" || this.id === "multiply") {
 
             operand = 0;
 
@@ -49,6 +49,21 @@ buttons.forEach(button => {
                 firstExpression.textContent = current + " +";
                 alertText.textContent = operand;
             
+            } else if (this.id === "subtract") {
+
+                firstExpression.textContent = current + " -";
+                alertText.textContent = operand;
+
+            } else if (this.id === "divide") {
+
+                firstExpression.textContent = current + " /";
+                alertText.textContent = operand;
+
+            } else if (this.id === "multiply") {
+
+                firstExpression.textContent = current + " *";
+                alertText.textContent = operand;
+
             }
 
             // replicate for all operators
