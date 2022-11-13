@@ -122,11 +122,24 @@ main {
     border-radius: 50%;
   }
 
-.calcAlert {
+#calcAlert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100px;
     width: 400px;
     border-radius: 10px;
     background-color: rgb(35, 44, 66);
+}
+
+#alertText {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    width: 370px;
+    color: white;
+    font-size: 2.5em;
 }
 
 .calcBody {
@@ -155,7 +168,7 @@ button:hover {
 }
 
 button:active {
-    box-shadow: inset 0 0 100px 100px rgb(175, 175, 175, 0.6);
+    box-shadow: inset 0 0 100px 100px rgba(75, 75, 75, 0.4);
 }
 
 .operator {
@@ -163,15 +176,15 @@ button:active {
     font-size: 1.2em;
 }
 
-.multiply {
+#multiply {
     padding-top: 12px;
 }
 
-.delete, .reset {
+#delete, #reset {
     background-color: rgb(215, 140, 140);
 }
 
-.reset, .equal {
+#reset, #equal {
     width: 182px;
 }
 
