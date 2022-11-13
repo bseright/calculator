@@ -163,6 +163,10 @@ button:active {
     font-size: 1.2em;
 }
 
+.multiply {
+    padding-top: 12px;
+}
+
 .delete, .reset {
     background-color: rgb(215, 140, 140);
 }
