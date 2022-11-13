@@ -29,27 +29,24 @@ main {
     display: flex;
     height: 60px;
     color: white;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .title {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: .9em;
+    font-size: .8em;
     width: 250px;
 }
 
 .themeContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 20px;
-    width: 120px;
-}
-
-.themeTitle {
-    font-size: .6em;
+    width: 140px;
+    margin-top: 5px;
 }
 
 .themeSelect {
@@ -64,6 +61,7 @@ main {
     padding-right: 2px;
     gap: 10px;
     font-size: .5em;
+    letter-spacing: 1px;
 }
 
 .switch {
@@ -148,6 +146,8 @@ button {
     height: 55px;
     border-radius: 5px;
     font-size: .9em;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
 }
 
 .operator {
