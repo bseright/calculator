@@ -150,6 +150,14 @@ button {
     font-family: 'Rubik', sans-serif;
 }
 
+button:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.6);
+}
+
+button:active {
+    box-shadow: inset 0 0 100px 100px rgb(175, 175, 175, 0.6);
+}
+
 .operator {
     background-color: rgb(156, 190, 179);
     font-size: 1.2em;
