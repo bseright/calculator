@@ -7,7 +7,7 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
     margin: 0;
 }
 
@@ -71,15 +71,15 @@ main {
     height: 16px;
   }
   
-  /* Hide default HTML checkbox */
-  .switch input {
+/* Hide default HTML checkbox */
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+/* The slider */
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -89,9 +89,9 @@ main {
     background-color: rgb(35, 44, 66);
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: "";
     height: 13px;
@@ -101,35 +101,45 @@ main {
     background-color: rgb(215, 215, 215);
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  input:checked + .slider {
+}
+
+input:checked + .slider {
     background-color: #2196F3;
-  }
-  
-  input:checked + .slider:before {
+}
+
+input:checked + .slider:before {
     -webkit-transform: translateX(39px);
     -ms-transform: translateX(39px);
     transform: translateX(39px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
+}
+
+/* Rounded sliders */
+.slider.round {
     border-radius: 34px;
-  }
-  
-  .slider.round:before {
+}
+
+.slider.round:before {
     border-radius: 50%;
-  }
+}
 
 #calcAlert {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100px;
     width: 400px;
     border-radius: 10px;
     background-color: rgb(35, 44, 66);
+}
+
+#operandPressed {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 40px;
+    width: 370px;
+    padding-right: 5px;
+    color: rgb(156, 190, 179);
 }
 
 #alertText {
