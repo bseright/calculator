@@ -43,15 +43,6 @@ function add() {
     expression = 0;
 }
 
-function addAgain() {
-    firstExpression.textContent = expression + current;
-
-    current = expression + current;
-    alertText.textContent = current;
-
-    expression = 0;
-}
-
 function subtract() {
     firstExpression.textContent = "";
 
@@ -91,99 +82,99 @@ buttons.forEach(button => {
         expression = Number(expression);
         current = Number(current);
 
-        if (operator === "add") {
+        if (operator === "+") {
             
             add();
         
-        } else if (operator === "subtract") {
+        } else if (operator === "-") {
 
             subtract();
 
-        } else if (operator === "divide") {
+        } else if (operator === "/") {
 
             divide();
 
-        } else if (operator === "multiply") {
+        } else if (operator === "*") {
 
             multiply();
 
         }
         
-    } else if (this.id === "add" && expression > 0 || expression < 0 || this.id === "subtract" && expression > 0 || expression < 0 || this.id === "divide" && expression > 0 || expression < 0 || this.id === "multiply" && expression > 0 || expression < 0) {
+    } else if (this.id === "+" && expression > 0 || expression < 0 || this.id === "-" && expression > 0 || expression < 0 || this.id === "/" && expression > 0 || expression < 0 || this.id === "*" && expression > 0 || expression < 0) {
         
         expression = Number(expression);
         current = Number(current);
 
-        if (this.id === "add") {
+        if (this.id === "+") {
 
             expression = expression + current;
         
             firstExpression.textContent = expression + " +";
-            operator = "add";
+            operator = "+";
 
             current = 0;
             alertText.textContent = current;
         
-        } else if (this.id === "subtract") {
+        } else if (this.id === "-") {
 
             expression = expression - current;
         
             firstExpression.textContent = expression + " -";
-            operator = "subtract";
+            operator = "-";
 
             current = 0;
             alertText.textContent = current;
 
-        } else if (this.id === "divide") {
+        } else if (this.id === "/") {
 
             expression = expression / current;
         
             firstExpression.textContent = expression + " /";
-            operator = "divide";
+            operator = "/";
 
             current = 0;
             alertText.textContent = current;
 
-        } else if (this.id === "multiply") {
+        } else if (this.id === "*") {
 
             expression = expression * current;
         
             firstExpression.textContent = expression + " *";
-            operator = "multiply";
+            operator = "*";
 
             current = 0;
             alertText.textContent = current;
 
         }
         
-    } else if (this.id === "add" || this.id === "subtract" || this.id === "divide" || this.id === "multiply") {
+    } else if (this.id === "+" || this.id === "-" || this.id === "/" || this.id === "*") {
 
         expression = current;
         current = 0;
 
-        if (this.id === "add") {
+        if (this.id === "+") {
         
             firstExpression.textContent = expression + " +";
             alertText.textContent = current;
-            operator = "add";
+            operator = "+";
         
-        } else if (this.id === "subtract") {
+        } else if (this.id === "-") {
 
             firstExpression.textContent = expression + " -";
             alertText.textContent = current;
-            operator = "subtract";
+            operator = "-";
 
-        } else if (this.id === "divide") {
+        } else if (this.id === "/") {
 
             firstExpression.textContent = expression + " /";
             alertText.textContent = current;
-            operator = "divide";
+            operator = "/";
 
-        } else if (this.id === "multiply") {
+        } else if (this.id === "*") {
 
             firstExpression.textContent = expression + " *";
             alertText.textContent = current;
-            operator = "multiply";
+            operator = "*";
 
         }
 
