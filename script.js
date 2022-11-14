@@ -1,5 +1,6 @@
 let current = 0;
-let operand;
+let expression;
+let operator;
 
 let buttons = document.querySelectorAll("button");
 let alertText = document.querySelector("#alertText p");
@@ -19,7 +20,7 @@ function del() {
 
 function reset() {
     current = 0;
-    operand = 0;
+    expression = 0;
     alertText.textContent = current;
     firstExpression.textContent = "";
 }
@@ -40,62 +41,108 @@ buttons.forEach(button => {
         // assign value to operand
         // if operand is undefined continue editing current
 
-        if (this.id === "add" || this.id === "subtract" || this.id === "divide" || this.id === "multiply") {
+    if (this.id === "equal") {
 
-            operand = 0;
+        expression = Number(expression);
+        current = Number(current);
 
-            if (this.id === "add") {
-           
-                firstExpression.textContent = current + " +";
-                alertText.textContent = operand;
+        if (operator === "add") {
             
-            } else if (this.id === "subtract") {
+            firstExpression.textContent = "";
 
-                firstExpression.textContent = current + " -";
-                alertText.textContent = operand;
+            current = expression + current;
+            alertText.textContent = current;
 
-            } else if (this.id === "divide") {
+            expression = 0;
+        
+        } else if (operator === "subtract") {
 
-                firstExpression.textContent = current + " /";
-                alertText.textContent = operand;
+            firstExpression.textContent = "";
 
-            } else if (this.id === "multiply") {
+            current = expression - current;
+            alertText.textContent = current;
 
-                firstExpression.textContent = current + " *";
-                alertText.textContent = operand;
+            expression = 0;
 
-            }
+        } else if (operator === "divide") {
 
-            // replicate for all operators
+            firstExpression.textContent = "";
+
+            current = expression / current;
+            alertText.textContent = current;
+
+            expression = 0;
+
+        } else if (operator === "multiply") {
+
+            firstExpression.textContent = "";
+
+            current = expression * current;
+            alertText.textContent = current;
+
+            expression = 0;
+
+        }
+        
+    } else if (this.id === "add" || this.id === "subtract" || this.id === "divide" || this.id === "multiply") {
+
+        expression = current;
+        current = 0;
+
+        if (this.id === "add") {
+        
+            firstExpression.textContent = expression + " +";
+            alertText.textContent = current;
+            operator = "add";
+        
+        } else if (this.id === "subtract") {
+
+            firstExpression.textContent = expression + " -";
+            alertText.textContent = current;
+            operator = "subtract";
+
+        } else if (this.id === "divide") {
+
+            firstExpression.textContent = expression + " /";
+            alertText.textContent = current;
+            operator = "divide";
+
+        } else if (this.id === "multiply") {
+
+            firstExpression.textContent = expression + " *";
+            alertText.textContent = current;
+            operator = "subtract";
+
+        }
+
+    } else {
+
+        // replicate below for operand IF operand is not undefined
+
+        if (this.id === "delete") { // place into own function to work with backspace press
+            
+            del();
+
+        } else if (this.id === "reset") {
+
+            reset();
+
+        } else if (this.id === "decimal") {
+            
+            decimal();
+
+        } else if (current === 0 && this.id == 0) {
+        
+        } else if (current === 0) {
+
+            current = this.id;
+            alertText.textContent = current;
 
         } else {
 
-            // replicate below for operand IF operand is not undefined
+            current = current.toString() + this.id.toString();
+            alertText.textContent = current;
 
-            if (this.id === "delete") { // place into own function to work with backspace press
-                
-                del();
-
-            } else if (this.id === "reset") {
-
-                reset();
-
-            } else if (this.id === "decimal") {
-                
-                decimal();
-
-            } else if (current === 0 && this.id == 0) {
-            
-            } else if (current === 0) {
-
-                current = this.id;
-                alertText.textContent = current;
-
-            } else {
-
-                current = current.toString() + this.id.toString();
-                alertText.textContent = current;
-
-            }
+        }
     }})
 });
