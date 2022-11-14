@@ -120,9 +120,13 @@ buttons.forEach(button => {
         if (this.id === "+") {
 
             if (operator !== this.id) {
+
                 diffOperator();
+                
             } else {
+
                 expression = expression + current;
+                
             }
         
             firstExpression.textContent = expression + " +";
@@ -134,9 +138,13 @@ buttons.forEach(button => {
         } else if (this.id === "-") {
 
             if (operator !== this.id) {
+
                 diffOperator();
+
             } else {
+
                 expression = expression - current;
+
             }
         
             firstExpression.textContent = expression + " -";
@@ -148,9 +156,13 @@ buttons.forEach(button => {
         } else if (this.id === "/") {
 
             if (operator !== this.id) {
+
                 diffOperator();
+
             } else {
+
                 expression = expression / current;
+
             }
         
             firstExpression.textContent = expression + " /";
@@ -162,9 +174,13 @@ buttons.forEach(button => {
         } else if (this.id === "*") {
 
             if (operator !== this.id) {
+
                 diffOperator();
+
             } else {
+
                 expression = expression * current;
+
             }
         
             firstExpression.textContent = expression + " *";
