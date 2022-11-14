@@ -34,6 +34,51 @@ function decimal() {
     }
 }
 
+function add() {
+    firstExpression.textContent = "";
+
+    current = expression + current;
+    alertText.textContent = current;
+
+    expression = 0;
+}
+
+function addAgain() {
+    firstExpression.textContent = expression + current;
+
+    current = expression + current;
+    alertText.textContent = current;
+
+    expression = 0;
+}
+
+function subtract() {
+    firstExpression.textContent = "";
+
+    current = expression - current;
+    alertText.textContent = current;
+
+    expression = 0;
+}
+
+function divide() {
+    firstExpression.textContent = "";
+
+    current = expression / current;
+    alertText.textContent = current;
+
+    expression = 0;
+}
+
+function multiply() {
+    firstExpression.textContent = "";
+
+    current = expression * current;
+    alertText.textContent = current;
+
+    expression = 0;
+}
+
 buttons.forEach(button => {
     button.addEventListener('click', function() {
 
@@ -48,39 +93,66 @@ buttons.forEach(button => {
 
         if (operator === "add") {
             
-            firstExpression.textContent = "";
-
-            current = expression + current;
-            alertText.textContent = current;
-
-            expression = 0;
+            add();
         
         } else if (operator === "subtract") {
 
-            firstExpression.textContent = "";
-
-            current = expression - current;
-            alertText.textContent = current;
-
-            expression = 0;
+            subtract();
 
         } else if (operator === "divide") {
 
-            firstExpression.textContent = "";
-
-            current = expression / current;
-            alertText.textContent = current;
-
-            expression = 0;
+            divide();
 
         } else if (operator === "multiply") {
 
-            firstExpression.textContent = "";
+            multiply();
 
-            current = expression * current;
+        }
+        
+    } else if (this.id === "add" && expression > 0 || expression < 0 || this.id === "subtract" && expression > 0 || expression < 0 || this.id === "divide" && expression > 0 || expression < 0 || this.id === "multiply" && expression > 0 || expression < 0) {
+        
+        expression = Number(expression);
+        current = Number(current);
+
+        if (this.id === "add") {
+
+            expression = expression + current;
+        
+            firstExpression.textContent = expression + " +";
+            operator = "add";
+
+            current = 0;
+            alertText.textContent = current;
+        
+        } else if (this.id === "subtract") {
+
+            expression = expression - current;
+        
+            firstExpression.textContent = expression + " -";
+            operator = "subtract";
+
+            current = 0;
             alertText.textContent = current;
 
-            expression = 0;
+        } else if (this.id === "divide") {
+
+            expression = expression / current;
+        
+            firstExpression.textContent = expression + " /";
+            operator = "divide";
+
+            current = 0;
+            alertText.textContent = current;
+
+        } else if (this.id === "multiply") {
+
+            expression = expression * current;
+        
+            firstExpression.textContent = expression + " *";
+            operator = "multiply";
+
+            current = 0;
+            alertText.textContent = current;
 
         }
         
@@ -111,15 +183,13 @@ buttons.forEach(button => {
 
             firstExpression.textContent = expression + " *";
             alertText.textContent = current;
-            operator = "subtract";
+            operator = "multiply";
 
         }
 
     } else {
 
-        // replicate below for operand IF operand is not undefined
-
-        if (this.id === "delete") { // place into own function to work with backspace press
+        if (this.id === "delete") {
             
             del();
 
