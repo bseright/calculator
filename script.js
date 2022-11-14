@@ -70,6 +70,18 @@ function multiply() {
     expression = 0;
 }
 
+function diffOperator() {
+    if (operator === "+") {
+        expression = expression + current;
+    } else if (operator === "-") {
+        expression = expression - current;
+    } else if (operator === "/") {
+        expression = expression / current;
+    } else if (operator === "*") {
+        expression = expression * current;
+    }
+}
+
 buttons.forEach(button => {
     button.addEventListener('click', function() {
 
@@ -107,7 +119,11 @@ buttons.forEach(button => {
 
         if (this.id === "+") {
 
-            expression = expression + current;
+            if (operator !== this.id) {
+                diffOperator();
+            } else {
+                expression = expression + current;
+            }
         
             firstExpression.textContent = expression + " +";
             operator = "+";
@@ -117,7 +133,11 @@ buttons.forEach(button => {
         
         } else if (this.id === "-") {
 
-            expression = expression - current;
+            if (operator !== this.id) {
+                diffOperator();
+            } else {
+                expression = expression - current;
+            }
         
             firstExpression.textContent = expression + " -";
             operator = "-";
@@ -127,7 +147,11 @@ buttons.forEach(button => {
 
         } else if (this.id === "/") {
 
-            expression = expression / current;
+            if (operator !== this.id) {
+                diffOperator();
+            } else {
+                expression = expression / current;
+            }
         
             firstExpression.textContent = expression + " /";
             operator = "/";
@@ -137,7 +161,11 @@ buttons.forEach(button => {
 
         } else if (this.id === "*") {
 
-            expression = expression * current;
+            if (operator !== this.id) {
+                diffOperator();
+            } else {
+                expression = expression * current;
+            }
         
             firstExpression.textContent = expression + " *";
             operator = "*";
