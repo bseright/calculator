@@ -6,6 +6,16 @@ let buttons = document.querySelectorAll("button");
 let alertText = document.querySelector("#alertText p");
 let firstExpression = document.querySelector("#firstExpression");
 
+// theme elements
+let slider = document.querySelector(".slider");
+let numberButtons = document.querySelectorAll(".number");
+let operators = document.querySelectorAll(".operator");
+let resetButton = document.querySelector("#reset");
+let delButton = document.querySelector("#delete");
+let calcBody = document.querySelector(".calcBody");
+let calcHeader = document.querySelector(".calcHeader");
+let footer = document.querySelector("footer");
+
 alertText.textContent = current;
 
 function del() {
@@ -250,4 +260,24 @@ buttons.forEach(button => {
 
         }
     }})
+});
+
+
+slider.addEventListener('click', function() {
+
+    numberButtons.forEach(button => {
+        button.classList.toggle("lightButtons");
+    })
+
+    operators.forEach(button => {
+        button.classList.toggle("lightOperators");
+    })
+    
+    resetButton.classList.toggle("lightReset");
+    delButton.classList.toggle("lightDelete");
+    alertText.classList.toggle("lightAlert");
+    calcBody.classList.toggle("lightCalcBody");
+    calcHeader.classList.toggle("lightHeader");
+    footer.classList.toggle("lightFooter");
+
 });
