@@ -12,7 +12,7 @@ function del() {
     current = current.toString().slice(0, -1);
     alertText.textContent = current;
 
-    if (current === "") {
+    if (current === "" || current === "-") {
         current = 0;
         alertText.textContent = current;
     }
@@ -112,7 +112,7 @@ buttons.forEach(button => {
 
         }
         
-    } else if (this.id === "+" && expression > 0 || expression < 0 || this.id === "-" && expression > 0 || expression < 0 || this.id === "/" && expression > 0 || expression < 0 || this.id === "*" && expression > 0 || expression < 0) {
+    } else if (this.id === "+" && expression > 0 || this.id === "+" && expression < 0 || this.id === "-" && expression > 0 || this.id === "-" && expression < 0 || this.id === "/" && expression > 0 || this.id === "/" && expression < 0 || this.id === "*" && expression > 0 || this.id === "*" && expression < 0) {
         
         expression = Number(expression);
         current = Number(current);
