@@ -12,6 +12,7 @@ let numberButtons = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 let undoish = document.querySelectorAll(".undoish");
 let calcAlert = document.querySelector(".calcAlert");
+let operandPressed = document.querySelector(".operandPressed");
 let calcBody = document.querySelector(".calcBody");
 let calcHeader = document.querySelector(".calcHeader");
 let body = document.querySelector("body");
@@ -285,6 +286,7 @@ slider.addEventListener('click', function() {
 
     calcAlert.classList.toggle("lightAlert");
     alertText.classList.toggle("lightText");
+    operandPressed.classList.toggle("lightOperand");
     calcBody.classList.toggle("lightCalcBody");
     calcHeader.classList.toggle("lightHeader");
     body.classList.toggle("lightBody");

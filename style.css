@@ -136,7 +136,7 @@ input:checked + .slider:before {
     background-color: rgb(35, 44, 66);
 }
 
-#operandPressed {
+.operandPressed {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -270,6 +270,10 @@ a:hover:after {
 
 .lightAlert {
     background-color: rgb(228, 223, 212);
+}
+
+.lightOperand {
+    color: rgb(38, 130, 153);
 }
 
 .lightText {
