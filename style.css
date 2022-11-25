@@ -224,7 +224,7 @@ a {
     position: relative;
     text-decoration: none;
     color: inherit;
-    transition: all .5s;
+    transition: all 0s;
 }
 
 a:hover {
@@ -239,7 +239,7 @@ a:after {
     width: 100%;
     transform: scaleX(0);
     height: 2px;
-    bottom: -3px;
+    bottom: -4px;
     left: 0px;
     background-color: white;
     transform-origin: bottom right;
@@ -297,7 +297,7 @@ a:hover:after {
     position: relative;
     text-decoration: none;
     color: inherit;
-    transition: all .5s;
+    transition: all 0s;
 }
 
 .lightLink:hover {
@@ -312,7 +312,7 @@ a:hover:after {
     width: 100%;
     transform: scaleX(0);
     height: 2px;
-    bottom: -3px;
+    bottom: -4px;
     left: 0px;
     background-color: rgb(58, 58, 58);
     transform-origin: bottom right;
