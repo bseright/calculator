@@ -10,11 +10,13 @@ let firstExpression = document.querySelector("#firstExpression");
 let slider = document.querySelector(".slider");
 let numberButtons = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
-let resetButton = document.querySelector("#reset");
-let delButton = document.querySelector("#delete");
+let undoish = document.querySelectorAll(".undoish");
+let calcAlert = document.querySelector(".calcAlert");
 let calcBody = document.querySelector(".calcBody");
 let calcHeader = document.querySelector(".calcHeader");
+let body = document.querySelector("body");
 let footer = document.querySelector("footer");
+let personal = document.querySelector("a");
 
 alertText.textContent = current;
 
@@ -272,12 +274,16 @@ slider.addEventListener('click', function() {
     operators.forEach(button => {
         button.classList.toggle("lightOperators");
     })
-    
-    resetButton.classList.toggle("lightReset");
-    delButton.classList.toggle("lightDelete");
-    alertText.classList.toggle("lightAlert");
+
+    undoish.forEach(button => {
+        button.classList.toggle("lightUndoish");
+    })
+
+    calcAlert.classList.toggle("lightAlert");
+    alertText.classList.toggle("lightText");
     calcBody.classList.toggle("lightCalcBody");
     calcHeader.classList.toggle("lightHeader");
+    body.classList.toggle("lightBody");
     footer.classList.toggle("lightFooter");
-
+    personal.classList.toggle("lightLink");
 });

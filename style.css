@@ -104,7 +104,11 @@ main {
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: rgb(228, 223, 212);
+}
+
+input:checked + .slider:before {
+    background-color: rgb(58, 58, 58);
 }
 
 input:checked + .slider:before {
@@ -122,7 +126,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-#calcAlert {
+.calcAlert {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,7 +196,7 @@ button:active {
     padding-top: 12px;
 }
 
-#delete, #reset {
+.undoish {
     background-color: rgb(215, 140, 140);
 }
 
@@ -228,7 +232,6 @@ a:hover {
     display: inline-block;
     position: relative;
 }
-
   
 a:after {
     content: '';
@@ -239,6 +242,79 @@ a:after {
     bottom: -3px;
     left: 0px;
     background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Light Classes */
+
+.lightButtons {
+    background-color: rgb(87, 87, 87);
+    color: white;
+}
+
+.lightOperators {
+    background-color: rgb(38, 130, 153);
+    color: white;
+}
+
+.lightUndoish {
+    background-color: rgb(219, 160, 71);
+    color: white;
+}
+
+.lightAlert {
+    background-color: rgb(228, 223, 212);
+}
+
+.lightText {
+    color: rgb(58, 58, 58);
+}
+
+.lightCalcBody {
+    background-color: rgb(228, 223, 212);
+}
+
+.lightHeader {
+    color: rgb(58, 58, 58);
+}
+
+.lightBody {
+    background-color: rgb(211, 202, 183);  
+}
+
+.lightFooter {
+    color: rgb(58, 58, 58);
+}
+
+.lightLink {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: all .5s;
+}
+
+.lightLink:hover {
+    color: rgb(58, 58, 58);
+    display: inline-block;
+    position: relative;
+}
+  
+.lightLink:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -3px;
+    left: 0px;
+    background-color: rgb(58, 58, 58);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
