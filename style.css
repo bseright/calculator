@@ -323,3 +323,11 @@ a:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+.lightHover:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2);
+}
+
+.lightHover:active {
+    box-shadow: inset 0 0 100px 100px rgba(35, 35, 35, 0.4);
+}

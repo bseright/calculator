@@ -279,6 +279,10 @@ slider.addEventListener('click', function() {
         button.classList.toggle("lightUndoish");
     })
 
+    buttons.forEach(button => {
+        button.classList.toggle("lightHover");
+    })
+
     calcAlert.classList.toggle("lightAlert");
     alertText.classList.toggle("lightText");
     calcBody.classList.toggle("lightCalcBody");
